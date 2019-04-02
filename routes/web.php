@@ -65,3 +65,13 @@ Route::get('formulario_materias','practica_ajax_materias\MateriasControlador@for
 Route::get('verEstudiantes','practica_ajax_materias\MateriasControlador@verEstudiantes');
 
 Route::post('insertar_estudiante','practica_ajax_materias\MateriasControlador@insertar_estudiante');
+
+
+
+//ajax producto
+Route::get('lista_productos/{producto}','practica_ajax_producto\Producto_Controlador@listado_productos');
+Route::get('formulario_producto','practica_ajax_producto\Producto_Controlador@formulario_producto');
+Route::get('lista_proveedores/{proveedor}','practica_ajax_producto\Producto_Controlador@listado_proveedores');
+
+Route::get('insertar_producto','practica_ajax_producto\Producto_Controlador@formulario_insertar_producto');
+Route::post('insertar_producto_bd','practica_ajax_producto\Producto_Controlador@insertar_producto_base');
