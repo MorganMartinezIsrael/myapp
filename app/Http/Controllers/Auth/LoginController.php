@@ -76,7 +76,7 @@ class LoginController extends Controller
     }
 
     public function obtieneApi($id){
-        $respuesta = $this->peticion('GET',"http://dev.myapp/api/black/{$id}");
+        $respuesta = $this->peticion('GET',"http://dev.myapp/api/auth/black/{$id}");
         $datos = json_decode($respuesta);
 
         return response()->json($datos);
