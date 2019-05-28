@@ -18,7 +18,7 @@ class Producto_Controlador extends Controller
         $producto = ModeloProducto::select('id','nombre','tipo','proveedor','precio_unitario','precio_venta')->where('id',$id)->get();
         return $producto;
     }
-
+    //formulario
     public function formulario_producto(){
         $enviar = ModeloProducto::pluck('nombre','id');
         return view('PW.vista_producto')->with('producto',$enviar);

@@ -1,5 +1,3 @@
-
-
 $(function () {
 
     $('#select-nombre').on('change', metodo_listar_proveedores);

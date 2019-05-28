@@ -16,3 +16,11 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::group(['prefix' => 'auth'],function (){
+    Route::get('black','Auth\LoginController@blacklist');
+    Route::post('insertar',"Auth\LoginController@insertar");
+    Route::put('actualizar','Auth\LoginController@actualizar');
+    Route::put('eliminar','Auth\LoginController@eliminar');
+
+});

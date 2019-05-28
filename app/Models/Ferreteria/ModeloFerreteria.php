@@ -33,4 +33,5 @@ class ModeloFerreteria extends Model
     {
         $this->attributes['fecha_registro'] = Carbon::createFromFormat('d/m/Y', $value)->toDateString();
     }
+
 }
