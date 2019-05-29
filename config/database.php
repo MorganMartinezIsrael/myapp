@@ -88,7 +88,7 @@ return [
             'prefix' => '',
             'prefix_indexes' => true,
             'schema' => 'inegi_schema',
-            'sslmode' => 'prefer',
+            'sslmode' => 'prefer'
         ],
 
         'sqlsrv' => [
