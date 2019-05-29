@@ -66,7 +66,7 @@ class LoginController extends Controller
         $raz_social = $request->raz_social;
         $nom_vial = $request->nom_vial;
 
-        $actualizar = ModeloINEGI::select('id', 'nombre_act', 'raz_social')
+        $actualizar = ModeloINEGI::select('id', 'nombre_act', 'nom_vial')
             ->where('id', $id)
             ->update(['nombre_act' => $nombre_act, 'raz_social' => $raz_social, 'nom_vial' => $nom_vial]);
 
@@ -130,8 +130,9 @@ class LoginController extends Controller
                 'X-Requested-With' => 'XMLHttpRequest'
             ],
             'form_params' => [
-                'nom_estab' => 'Hola Mundo desde Heroku',
-                'raz_social' => 'Ya exente la quinta y tercera y cuarta'
+                'nom_act' => 'Hola Mundo desde Heroku',
+                'raz_social' => 'Ya exente la quinta y tercera y cuarta',
+                'nom_vial' => 'Vamos a la calenda'
             ]
         ]);
         $datos = json_decode($respuesta);
