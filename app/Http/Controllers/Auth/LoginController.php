@@ -146,7 +146,7 @@ class LoginController extends Controller
     public function apiBusca()
     {
         $respuesta = $this->peticion(
-            'POST',
+            'GET',
             "https://myapidsos.herokuapp.com/api/auth/buscar",
             [
                 'headers' => [
