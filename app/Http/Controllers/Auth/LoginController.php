@@ -154,8 +154,7 @@ class LoginController extends Controller
                     'X-Requested-With' => 'XMLHttpRequest'
                 ],
                 'form_params' => [
-                    'id' => '8254',
-
+                    'id' => '8254'
                 ]
             ]
         );
