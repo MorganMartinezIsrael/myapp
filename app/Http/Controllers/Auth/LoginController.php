@@ -147,7 +147,7 @@ class LoginController extends Controller
     {
         $respuesta = $this->peticion(
             'GET',
-            "https://myapidsos.herokuapp.com/api/auth/buscar?nom_v_e_2={$nom}"
+            "https://myapidsos.herokuapp.com/api/auth/buscar/{$nom}"
         );
         $datos = json_decode($respuesta);
 
