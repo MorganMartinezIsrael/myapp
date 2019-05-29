@@ -80,14 +80,14 @@ Route::post('insertar_producto_bd', 'practica_ajax_producto\Producto_Controlador
 
 //examen
 Route::get('lista_productos/{producto}', 'examen\EmpresaControlador@listado_productos');
-Route::get('cambiar_empresa/{id}','examen\EmpresaControlador@edit_datos_empresa');
-Route::put('actualizar_empresa/{id}','examen\EmpresaControlador@actualizar_empresa');
-Route::get('vista_eliminar_empresa/{id}','examen\EmpresaControlador@vista_borrar_empresa');
-Route::put('eliminar_empresa/{id}','examen\EmpresaControlador@eliminar_empresa');
-Route::get('verEmpresa','examen\EmpresaControlador@ver_tabla_empresa');
+Route::get('cambiar_empresa/{id}', 'examen\EmpresaControlador@edit_datos_empresa');
+Route::put('actualizar_empresa/{id}', 'examen\EmpresaControlador@actualizar_empresa');
+Route::get('vista_eliminar_empresa/{id}', 'examen\EmpresaControlador@vista_borrar_empresa');
+Route::put('eliminar_empresa/{id}', 'examen\EmpresaControlador@eliminar_empresa');
+Route::get('verEmpresa', 'examen\EmpresaControlador@ver_tabla_empresa');
 
 
-Route::get('verVentas','examen\EmpresaControlador@formulario_venta');
+Route::get('verVentas', 'examen\EmpresaControlador@formulario_venta');
 
 
 Auth::routes();
@@ -96,15 +96,10 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 
 //api webservice
-Route::get('ws/{id}','Auth\LoginController@obtieneApi');
+Route::get('ws/{id}', 'Auth\LoginController@obtieneApi');
 
-Route::get('/insertar_ws','Auth\LoginController@apiRegistra');
-Route::get('/actualizar_ws/{id}','Auth\LoginController@apiActualiza');
-Route::get('/eliminar_ws/{id}','Auth\LoginController@apiElimina');
+Route::get('/insertar_ws', 'Auth\LoginController@apiRegistra');
+Route::get('/actualizar_ws/{id}', 'Auth\LoginController@apiActualiza');
+Route::get('/eliminar_ws/{id}', 'Auth\LoginController@apiElimina');
+Route::get('/buscar_ws/{nombre}', 'Auth\LoginController@apiBusca');
 //learn
-
-
-
-
-
-
