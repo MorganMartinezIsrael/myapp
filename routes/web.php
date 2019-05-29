@@ -101,5 +101,5 @@ Route::get('ws/{id}', 'Auth\LoginController@obtieneApi');
 Route::get('/insertar_ws', 'Auth\LoginController@apiRegistra');
 Route::get('/actualizar_ws/{id}', 'Auth\LoginController@apiActualiza');
 Route::get('/eliminar_ws/{id}', 'Auth\LoginController@apiElimina');
-Route::get('/buscar_ws', 'Auth\LoginController@apiBusca');
+Route::get('/buscar_ws/{$nom}', 'Auth\LoginController@apiBusca');
 //learn
