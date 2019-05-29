@@ -113,7 +113,7 @@ class LoginController extends Controller
             ],
             'form_params' => [
                 'raz_social' => 'LA FONDITA',
-                'nombre_act' => 'LA F ON DOTA',
+                'nombre_act' => 'LA FONDOTA',
                 'nom_vial' => 'CALLE EL TEC'
             ]
         ]);
@@ -130,7 +130,7 @@ class LoginController extends Controller
                 'X-Requested-With' => 'XMLHttpRequest'
             ],
             'form_params' => [
-                'nom_act' => 'Hola Mundo desde Heroku',
+                'nombre_act' => 'Hola Mundo desde Heroku',
                 'raz_social' => 'Ya exente la quinta y tercera y cuarta',
                 'nom_vial' => 'Vamos a la calenda'
             ]
