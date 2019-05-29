@@ -48,18 +48,21 @@ class LoginController extends Controller
     }
 
     public function insertar(Request $request){
+
         $raz_social = $request ->raz_social;
-        ModeloINEGI::create(['raz_social' => $raz_social]);
+        $nom_estab = $request->nom_estab;
+        ModeloINEGI::create(['nom_estab'=>$nom_estab,'raz_social' => $raz_social]);
         return response()->json(['mensaje' => 'Registrado correctamente']);
     }
 
     public function actualizar(Request $request){
         $id = $request->id;
+        $nom_estab = $request->nom_estab;
         $raz_social = $request->raz_social;
 
-        $actualizar = ModeloINEGI::select('id','raz_social')
+        $actualizar = ModeloINEGI::select('id','nom_estab','raz_social')
         ->where('id',$id)
-        ->update(['raz_social' => $raz_social]);
+        ->update(['nom_estab'=>$nom_estab,'raz_social' => $raz_social]);
 
         return response()->json(['mensaje' => 'Actualizado correctamente']);
     }
@@ -85,13 +88,36 @@ class LoginController extends Controller
     public function apiRegistra(){
         $respuesta = $this->peticion('POST',"http://dev.myapp/api/auth/insertar",[
            'headers'=>[
-               'Content-Type'=>'application/x-ww-form-urlencoded',
+               'Content-Type'=>'application/x-www-form-urlencoded',
                'X-Requested-With'=>'XMLHttpRequest'
            ],
            'form_params'=>[
                'raz_social'=>'Bamby es ...'
            ]
         ]);
+        $datos = json_decode($respuesta);
+
+        return response()->json($datos);
+    }
+
+    public function apiActualiza($id){
+        $respuesta = $this->peticion('PUT',"http://dev.myapp/api/auth/actualizar/{$id}",[
+            'headers'=>[
+                'Content-Type'=>'application/x-www-form-urlencoded',
+                'X-Requested-With'=>'XMLHttpRequest'
+            ],
+            'form_params'=>[
+                'nom_estab'=>'Hey daddy 2',
+                'raz_social'=>'Johan no me folles'
+            ]
+        ]);
+        $datos = json_decode($respuesta);
+
+        return response()->json($datos);
+    }
+
+    public function apiElimina($id){
+        $respuesta = $this->peticion('PUT',"http://dev.myapp/api/auth/eliminar/{$id}");
         $datos = json_decode($respuesta);
 
         return response()->json($datos);

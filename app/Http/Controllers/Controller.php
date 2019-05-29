@@ -23,4 +23,7 @@ class Controller extends BaseController
         }
         return $respuesta->getBody()->getContents();
     }
+
+    //consumir el API con los siguientes datos:
+    //URL: http://dsos,net/api/altas
 }

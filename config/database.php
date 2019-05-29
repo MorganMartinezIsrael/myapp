@@ -1,5 +1,12 @@
 <?php
 
+$url = parse_url(getenv("DATABASE_URL"));
+
+$host = $url["host"];
+$username = $url["user"];
+$password = $url["pass"];
+$database = substr($url["path"], 1);
+
 return [
 
     /*
@@ -60,12 +67,23 @@ return [
         ],
 
         'pgsql' => [
+//            'driver' => 'pgsql',
+//            'host' => env('DB_HOST', '127.0.0.1'),
+//            'port' => env('DB_PORT', '5432'),
+//            'database' => env('DB_DATABASE', 'INEGI'),
+//            'username' => env('DB_USERNAME', 'postgres'),
+//            'password' => env('DB_PASSWORD', 'Morgan10'),
+//            'charset' => 'utf8',
+//            'prefix' => '',
+//            'prefix_indexes' => true,
+//            'schema' => 'inegi_schema',
+//            'sslmode' => 'prefer',
             'driver' => 'pgsql',
-            'host' => env('DB_HOST', '127.0.0.1'),
-            'port' => env('DB_PORT', '5432'),
-            'database' => env('DB_DATABASE', 'INEGI'),
-            'username' => env('DB_USERNAME', 'postgres'),
-            'password' => env('DB_PASSWORD', 'Morgan10'),
+            'host' => env($host),
+            'port' => env(5432),
+            'database' => env($database),
+            'username' => env($username),
+            'password' => env($password),
             'charset' => 'utf8',
             'prefix' => '',
             'prefix_indexes' => true,

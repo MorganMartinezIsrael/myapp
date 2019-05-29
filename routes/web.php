@@ -99,6 +99,8 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('ws/{id}','Auth\LoginController@obtieneApi');
 
 Route::get('/insertar_ws','Auth\LoginController@apiRegistra');
+Route::get('/actualizar_ws/{id}','Auth\LoginController@apiActualiza');
+Route::get('/eliminar_ws/{id}','Auth\LoginController@apiElimina');
 //learn
 
 
