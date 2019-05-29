@@ -66,7 +66,7 @@ return [
             ]) : [],
         ],
 
-        'pgsql' =>  array(
+        'pgsql' => [
 //            'driver' => 'pgsql',
 //            'host' => env('DB_HOST', '127.0.0.1'),
 //            'port' => env('DB_PORT', '5432'),
@@ -79,17 +79,17 @@ return [
 //            'schema' => 'inegi_schema',
 //            'sslmode' => 'prefer',
             'driver' => 'pgsql',
-            'host' => env($host),
-            'port' => env(5432),
-            'database' => env($database),
-            'username' => env($username),
-            'password' => env($password),
+            'host' => env('DB_HOST', 'ec2-50-19-127-115.compute-1.amazonaws.com'),
+            'port' => env('DB_PORT', '5432'),
+            'database' => env('DB_DATABASE', 'dbta4nhescse8a'),
+            'username' => env('DB_USERNAME', 'dursfcgldgoytb'),
+            'password' => env('DB_PASSWORD', 'e65644f4b5018c9ffa359fd5d30be4eaad1aed7b48177653dfd685ae852001c6'),
             'charset' => 'utf8',
             'prefix' => '',
             'prefix_indexes' => true,
             'schema' => 'inegi_schema',
-            'sslmode' => 'prefer'
-),
+            'sslmode' => 'prefer',
+        ],
 
         'sqlsrv' => [
             'driver' => 'sqlsrv',
