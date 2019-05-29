@@ -87,7 +87,7 @@ class LoginController extends Controller
     {
         $nom_v_e_2 = $request->nom_v_e_2;
 
-        $al = DenueInegi62::select('id', 'raz_social', 'nombre_act', 'nom_vial')
+        $al = ModeloINEGI::select('id', 'raz_social', 'nombre_act', 'nom_vial')
             ->where('nom_v_e_2', $nom_v_e_2)
             ->get();
         return $al;
