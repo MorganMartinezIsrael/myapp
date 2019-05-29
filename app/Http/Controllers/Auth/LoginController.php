@@ -154,7 +154,7 @@ class LoginController extends Controller
                     'X-Requested-With' => 'XMLHttpRequest'
                 ],
                 'form_params' => [
-                    'nom_v_e_2' => 'TORNEROS'
+                    'nom_v_e_2' => "TORNEROS"
                 ]
             ]
         );
