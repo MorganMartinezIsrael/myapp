@@ -14,16 +14,13 @@ class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
-    protected function peticion($metodo,$url,$parametros=[]){
+    protected function peticion($metodo, $url, $parametros = [])
+    {
         $cliente = new Client;
         $respuesta = null;
         try {
             $respuesta = $cliente->request($metodo, $url, $parametros);
-        } catch (GuzzleException $e) {
-        }
+        } catch (GuzzleException $e) { }
         return $respuesta->getBody()->getContents();
     }
-
-    //consumir el API con los siguientes datos:
-    //URL: http://dsos,net/api/altas
 }
