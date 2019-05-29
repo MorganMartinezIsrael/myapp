@@ -53,20 +53,22 @@ class LoginController extends Controller
     {
 
         $raz_social = $request->raz_social;
-        $nom_estab = $request->nom_estab;
-        ModeloINEGI::create(['nom_estab' => $nom_estab, 'raz_social' => $raz_social]);
+        $nombre_act = $request->nombre_act;
+        $nom_vial = $request->nom_vial;
+        ModeloINEGI::create(['nombre_act' => $nombre_act, 'raz_social' => $raz_social, 'nom_vial' => $nom_vial]);
         return response()->json(['mensaje' => 'Registrado correctamente']);
     }
 
     public function actualizar(Request $request)
     {
         $id = $request->id;
-        $nom_estab = $request->nom_estab;
+        $nombre_act = $request->nombre_act;
         $raz_social = $request->raz_social;
+        $nom_vial = $request->nom_vial;
 
-        $actualizar = ModeloINEGI::select('id', 'nom_estab', 'raz_social')
+        $actualizar = ModeloINEGI::select('id', 'nombre_act', 'raz_social')
             ->where('id', $id)
-            ->update(['nom_estab' => $nom_estab, 'raz_social' => $raz_social]);
+            ->update(['nombre_act' => $nombre_act, 'raz_social' => $raz_social, 'nom_vial' => $nom_vial]);
 
         return response()->json(['mensaje' => 'Actualizado correctamente']);
     }
@@ -110,7 +112,9 @@ class LoginController extends Controller
                 'X-Requested-With' => 'XMLHttpRequest'
             ],
             'form_params' => [
-                'raz_social' => 'Bamby es ...'
+                'raz_social' => 'LA FONDITA',
+                'nombre_act' => 'LA F ON DOTA',
+                'nom_vial' => 'CALLE EL TEC'
             ]
         ]);
         $datos = json_decode($respuesta);
@@ -126,8 +130,8 @@ class LoginController extends Controller
                 'X-Requested-With' => 'XMLHttpRequest'
             ],
             'form_params' => [
-                'nom_estab' => 'Hey daddy 2',
-                'raz_social' => 'Johan no me folles'
+                'nom_estab' => 'Hola Mundo desde Heroku',
+                'raz_social' => 'Ya exente la quinta y tercera y cuarta'
             ]
         ]);
         $datos = json_decode($respuesta);
