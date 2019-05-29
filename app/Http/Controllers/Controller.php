@@ -20,7 +20,11 @@ class Controller extends BaseController
         $respuesta = null;
         try {
             $respuesta = $cliente->request($metodo, $url, $parametros);
-        } catch (GuzzleException $e) { }
+        } catch (GuzzleException $e) {
+            $responseErrorBody = strval($e->getResponse()->getBody());
+            $errorMessage = $this->errorMessageFromJsonBody($responseErrorBody);
+            $statusCode = $e->getResponse()->getStatusCode();
+        }
         return $respuesta->getBody()->getContents();
     }
 }
