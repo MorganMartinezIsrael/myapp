@@ -157,7 +157,7 @@ class LoginController extends Controller
                     'nom_v_e_2' => 'TORNEROS',
 
                 ]
-
+            ]
         );
         $datos = json_decode($respuesta);
 
