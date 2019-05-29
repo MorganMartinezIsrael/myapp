@@ -143,20 +143,11 @@ class LoginController extends Controller
         return response()->json($datos);
     }
 
-    public function apiBusca()
+    public function apiBusca($nom)
     {
         $respuesta = $this->peticion(
             'GET',
-            "https://myapidsos.herokuapp.com/api/auth/buscar",
-            [
-                'headers' => [
-                    'Content-Type' => 'application/x-www-form-urlencoded',
-                    'X-Requested-With' => 'XMLHttpRequest'
-                ],
-                'form_params' => [
-                    'nom_v_e_2' => 'AZTECA'
-                ]
-            ]
+            "https://myapidsos.herokuapp.com/api/auth/buscar?nom_v_e_2={$nom}"
         );
         $datos = json_decode($respuesta);
 
