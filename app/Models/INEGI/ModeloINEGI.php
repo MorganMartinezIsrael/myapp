@@ -15,8 +15,6 @@ class ModeloINEGI extends Model
 
     public $timestamps = false;
     protected $fillable = [
-        'id','nom_estab', 'raz_social', 'codigo_act', 'nombre_act','per_ocu','tipo_v_e_1','nom_v_e_1','tipo_v_e_2','nom_v_e_2','tipo_v_e_3','nom_v_e_3','numero_ext','letra_ext'
+        'id', 'nom_estab', 'raz_social', 'codigo_act', 'nombre_act', 'per_ocu', 'tipo_v_e_1', 'nom_v_e_1', 'tipo_v_e_2', 'nom_v_e_2', 'tipo_v_e_3', 'nom_v_e_3', 'numero_ext', 'letra_ext', 'nom_vial'
     ];
-
-
 }
