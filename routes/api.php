@@ -22,5 +22,5 @@ Route::group(['prefix' => 'auth'], function () {
     Route::post('insertar', "Auth\LoginController@insertar");
     Route::put('actualizar/{id}', 'Auth\LoginController@actualizar');
     Route::put('eliminar/{id}', 'Auth\LoginController@eliminar');
-    Route::get('buscar', 'Auth\LoginController@buscar');
+    Route::get('buscar/{$nom}', 'Auth\LoginController@buscar');
 });
