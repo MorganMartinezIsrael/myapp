@@ -85,10 +85,10 @@ class LoginController extends Controller
 
     public function buscar(Request $request)
     {
-        $nom_v_e_2 = $request->nom_v_e_2;
+        $id = $request->id;
 
         $al = ModeloINEGI::select('id', 'raz_social', 'nombre_act', 'nom_vial')
-            ->where('nom_v_e_2', $nom_v_e_2)
+            ->where('id', '=', $id)
             ->get();
         return $al;
     }
@@ -143,11 +143,11 @@ class LoginController extends Controller
         return response()->json($datos);
     }
 
-    public function apiBusca($nom_v_e_2)
+    public function apiBusca($id)
     {
         $respuesta = $this->peticion(
             'GET',
-            "https://myapidsos.herokuapp.com/api/auth/buscar?nom_v_e_2={$nom_v_e_2}"
+            "https://myapidsos.herokuapp.com/api/auth/buscar?id={$id}"
         );
         $datos = json_decode($respuesta);
 
