@@ -143,7 +143,7 @@ class LoginController extends Controller
         return response()->json($datos);
     }
 
-    public function apiBusca($nom)
+    public function apiBusca()
     {
         $respuesta = $this->peticion(
             'GET',
