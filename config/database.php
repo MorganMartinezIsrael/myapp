@@ -66,7 +66,7 @@ return [
             ]) : [],
         ],
 
-        'pgsql' => [
+        'pgsql' =>  array(
 //            'driver' => 'pgsql',
 //            'host' => env('DB_HOST', '127.0.0.1'),
 //            'port' => env('DB_PORT', '5432'),
@@ -89,7 +89,7 @@ return [
             'prefix_indexes' => true,
             'schema' => 'inegi_schema',
             'sslmode' => 'prefer'
-        ],
+),
 
         'sqlsrv' => [
             'driver' => 'sqlsrv',
