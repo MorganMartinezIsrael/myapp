@@ -88,7 +88,7 @@ class LoginController extends Controller
         $nom_v_e_2 = $request->nom_v_e_2;
 
         $al = ModeloINEGI::select('id', 'raz_social', 'nombre_act', 'nom_vial')
-            ->where('nom_v_e_2', '=', $nom_v_e_2)
+            ->where('id', '=', $nom_v_e_2)
             ->take(1)->first();
         return $al;
     }
@@ -154,7 +154,7 @@ class LoginController extends Controller
                     'X-Requested-With' => 'XMLHttpRequest'
                 ],
                 'form_params' => [
-                    'nom_v_e_2' => 'TORNEROS',
+                    'id' => '8254',
 
                 ]
             ]
