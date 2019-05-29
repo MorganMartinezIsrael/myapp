@@ -88,7 +88,7 @@ class LoginController extends Controller
         $nom_v_e_2 = $request->nom_v_e_2;
 
         $al = ModeloINEGI::select('id', 'raz_social', 'nombre_act', 'nom_vial')
-            ->where('nom_v_e_2', 'like', $nom_v_e_2)
+            ->where('nom_v_e_2', 'like', "%{$nom_v_e_2}%")
             ->get();
         return $al;
     }
