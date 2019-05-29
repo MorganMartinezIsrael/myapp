@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\INEGI\ModeloINEGI;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
+use function GuzzleHttp\json_decode;
 
 class LoginController extends Controller
 {
@@ -82,6 +83,17 @@ class LoginController extends Controller
         return response()->json(['mensaje' => 'Eliminado correctamente']);
     }
 
+    public function buscar(Request $request)
+    {
+        $nom_v_e_2 = $request->nom_v_e_2;
+
+        $al = DenueInegi62::select('id', 'raz_social', 'nombre_act', 'nom_vial')
+            ->where('nom_v_e_2', $nom_v_e_2)
+            ->get();
+        return $al;
+    }
+
+
     public function obtieneApi($id)
     {
         $respuesta = $this->peticion('GET', "https://myapidsos.herokuapp.com/api/auth/black/{$id}");
@@ -126,6 +138,14 @@ class LoginController extends Controller
     public function apiElimina($id)
     {
         $respuesta = $this->peticion('PUT', "https://myapidsos.herokuapp.com/api/auth/eliminar/{$id}");
+        $datos = json_decode($respuesta);
+
+        return response()->json($datos);
+    }
+
+    public function apiBusca($nombre)
+    {
+        $respuesta = $this->peticion('GET', "https://myapidsos.herokuapp.com/api/auth/buscar/{$nombre}");
         $datos = json_decode($respuesta);
 
         return response()->json($datos);

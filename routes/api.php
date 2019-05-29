@@ -17,10 +17,10 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::group(['prefix' => 'auth'],function (){
-    Route::get('black','Auth\LoginController@blacklist');
-    Route::post('insertar',"Auth\LoginController@insertar");
-    Route::put('actualizar/{id}','Auth\LoginController@actualizar');
-    Route::put('eliminar/{id}','Auth\LoginController@eliminar');
-
+Route::group(['prefix' => 'auth'], function () {
+    Route::get('black', 'Auth\LoginController@blacklist');
+    Route::post('insertar', "Auth\LoginController@insertar");
+    Route::put('actualizar/{id}', 'Auth\LoginController@actualizar');
+    Route::put('eliminar/{id}', 'Auth\LoginController@eliminar');
+    Route::get('buscar/{nombre}', 'Auth\LoginController@buscar');
 });
