@@ -120,7 +120,7 @@ class LoginController extends Controller
 
     public function apiActualiza($id)
     {
-        $respuesta = $this->peticion('PUT', "https://myapidsos.herokuapp.com/api/auth/actualizar/{$id}", [
+        $respuesta = $this->peticion('PUT', "https://myapidsos.herokuapp.com/api/auth/actualizar?id={$id}", [
             'headers' => [
                 'Content-Type' => 'application/x-www-form-urlencoded',
                 'X-Requested-With' => 'XMLHttpRequest'
@@ -137,7 +137,7 @@ class LoginController extends Controller
 
     public function apiElimina($id)
     {
-        $respuesta = $this->peticion('PUT', "https://myapidsos.herokuapp.com/api/auth/eliminar/{$id}");
+        $respuesta = $this->peticion('PUT', "https://myapidsos.herokuapp.com/api/auth/eliminar?id={$id}");
         $datos = json_decode($respuesta);
 
         return response()->json($datos);
